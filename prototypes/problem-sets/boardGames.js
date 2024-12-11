@@ -26,7 +26,29 @@ e.g.
 
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+  1. Create an empty array, 'array', to store the names of the games.
+  2. Iterate through each key in the 'boardGames' object using 'Object.keys(boardGames).forEach()'.
+  3. For each key, check if the key matches the 'type' argument passed to the function.
+  4. If the key matches, iterate through the array of games (value) for that category.
+  5. For each game object in the array, access the 'name' property.
+  6. Add the 'name' property to the 'array' using '.push()'.
+  7. After the loop finishes, return the 'array' with all the game names.
 */
+function listGames(type) {
+  let array = [];
+  Object.keys(boardGames).forEach((boardGame) => {
+    if(type === boardGame){
+      boardGames[boardGame].forEach((val) => {
+        array.push(val.name);
+      })
+    }
+  })
+  return array
+}
+
+console.log(listGames('strategy'))
+console.log(listGames('party'))
+console.log(listGames('childrens'))
 
 
 /*
@@ -114,9 +136,9 @@ Annotation:
 
 
 
-// module.exports = {
-//   listGames,
-//   findHighestRatedGamesByType,
-//   averageScoreByType,
-//   averageScoreByTypeAndPlayers
-// };
+module.exports = {
+  listGames
+  // findHighestRatedGamesByType,
+  // averageScoreByType,
+  // averageScoreByTypeAndPlayers
+};

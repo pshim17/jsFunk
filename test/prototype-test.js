@@ -424,7 +424,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Board Game Prompts", () => {
-    it.skip("listGames", () => {
+    it("listGames", () => {
       const strategyGames = listGames('strategy');
       const childrensGames = listGames('childrens');
       const partyGames = listGames('party');
